@@ -1,60 +1,75 @@
-# Vocabulario Emocional - App Shiny
+#  Vocabulario Emocional – App Shiny
 
-Esta aplicación analiza el **vocabulario emocional** presente en un texto, utilizando un diccionario anotado llamado **DAVE** (Diccionario Anotado de Vocabulario Emocional). Fue desarrollada con **R y Shiny** como parte de una unidad curricular de *Neurociencia y Procesos Socioafectivos*.
+Esta aplicación analiza el **vocabulario emocional** presente en un texto, utilizando un diccionario anotado llamado **DAVE** (Diccionario Anotado de Vocabulario Emocional).  
+Fue desarrollada en **R con Shiny** como parte de la unidad curricular *Neurociencia y Procesos Socioafectivos*.
 
 ---
 
-## ¿Qué hace la app?
+##  ¿Qué hace la app?
 
-- Permite ingresar un texto o subir un archivo `.txt`.
-- Analiza las palabras según su **polaridad** (positiva, negativa, neutra).
+- Permite ingresar texto manualmente o subir un archivo `.txt`.
+- Analiza palabras según su **polaridad**: positiva, negativa o neutra.
 - Calcula estadísticas de **valencia** (agrado) y **arousal** (intensidad emocional).
-- Muestra resultados en tablas y gráficos interactivos.
+- Muestra los resultados en **tablas y gráficos interactivos**.
 - Permite **filtrar palabras** (por ejemplo: “amor”, “querer”, etc.).
-- Genera **gráficos descargables en PDF** y **tablas en CSV**.
+- Ofrece la descarga de resultados como:
+  - 📄 **CSV** (polaridad, valencia y arousal)
+  - 📊 **PDF** (gráficos de polaridad y nube de palabras)
 
 ---
 
-## Estructura del proyecto
+##  Estructura del proyecto
+
+```
 VocabularioEmocional/
-├── ui.R # Interfaz de usuario (frontend)
-├── server.R # Lógica del servidor (backend)
-├── DAVE.csv # Diccionario emocional (no incluido en Git por .gitignore)
-├── README.md # Este archivo
+├── ui.R           # Interfaz de usuario (frontend)
+├── server.R       # Lógica del servidor (backend)
+├── DAVE.csv       # Diccionario emocional (ignorado por Git)
+├── README.md      # Este archivo
+```
 
-## Requisitos
+---
 
-Antes de ejecutar la app, asegurate de tener instalado R y RStudio.
+##  Requisitos
 
-Instalá los paquetes necesarios con:
+Antes de ejecutar la app, asegurate de tener instalado **R y RStudio**.
+
+Instalá los paquetes necesarios desde R:
 
 ```r
 install.packages(c("shiny", "tidyverse", "tidytext", "DT", "shinythemes", "ggwordcloud"))
+```
 
-¿Cómo ejecutarla?
-Cloná este repositorio.
+---
 
-Asegurate de tener el archivo DAVE.csv en la misma carpeta que ui.R y server.R.
+##  ¿Cómo ejecutarla?
 
-Abrí RStudio y ejecutá:
+1. Cloná este repositorio.
+2. Asegurate de que el archivo `DAVE.csv` esté en la misma carpeta que `ui.R` y `server.R`.
+3. Abrí RStudio, navegá a la carpeta del proyecto, y ejecutá en la consola:
 
+```r
 shiny::runApp()
+```
 
-Cambios realizados (respecto a la versión original commit kickoff-codigoNigerManchini)
-- Separación del código en ui.R y server.R para facilitar mantenimiento.
+La aplicación se abrirá automáticamente en tu navegador.
 
-- Se agregó un botón “Analizar texto” para controlar cuándo se ejecuta el análisis.
+---
 
-- Posibilidad de subir archivos .txt con el texto a analizar.
+##  Cambios realizados (respecto al commit original de Niger Manchini)
 
-- Mejora visual con el tema flatly de Shiny.
+-  Separación del código en `ui.R` y `server.R` para facilitar el mantenimiento.
+-  Se incorporó un botón **“Analizar texto”** para controlar la ejecución del análisis.
+-  Se agregó la posibilidad de **subir archivos `.txt`** como alternativa al texto pegado.
+-  Se mejoró la apariencia visual con el tema `flatly` de Shiny.
+-  Se agregaron botones de descarga para:
+  - CSV: resultados de polaridad, valencia y arousal.
+  - PDF: nube de palabras y gráfico de polaridad.
 
-- Botones para descargar resultados:
+---
 
-- CSV: polaridad, valencia y arousal.
+##  Autoría
 
-- PDF: gráficos de nube de palabras y proporción de polaridad.
+Esta aplicación fue adaptada y extendida por **Verónica Medina**, con base en un proyecto de análisis lingüístico y emocional realizado por **Niger Manchini**.
 
-Autoría
-Esta aplicación fue adaptada y extendida por Verónica Medina, con base en un proyecto de análisis lingüístico y emocional realizaso por Niger Manchini.
-Para más información sobre el diccionario DAVE, contactá al docente responsable de la unidad curricular Neurociencia y Proceso Socioafectivos Niger Manchini.
+Para más información sobre el diccionario DAVE, contactá al docente responsable de la unidad curricular *Neurociencia y Procesos Socioafectivos*, **Niger Manchini**.
