@@ -1,0 +1,47 @@
+# Archivos de sistema
+.Rhistory
+.Rapp.history
+.RData
+.Ruserdata
+.Rproj.user/
+.Rproj.user
+.DS_Store
+*.swp
+*.bak
+*.tmp
+*.log
+
+# Archivos de sesión
+.RSession*
+.RDataTmp*
+
+# Archivos de entorno
+.Renviron
+.env
+
+# Proyectos RStudio
+*.Rproj
+
+# Bibliotecas locales (opcional)
+packrat/
+renv/
+
+# Salidas de pruebas o reportes
+*.html
+*.pdf
+*.docx
+*.xlsx
+*.png
+*.svg
+
+# Archivos temporales
+*.zip
+*.tar.gz
+*.tar
+*.gz
+*.rds
+*.rda
+*.csv
+
+# Ignorar específicamente DAVE.csv
+DAVE.csv
